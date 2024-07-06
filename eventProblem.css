@@ -1,0 +1,49 @@
+#square{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    margin-top: 30px;
+}
+#sampleImage-coding{
+    height: 400px;
+}
+#leftBtn {
+    margin-right: 6%;
+}
+.toggle {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: relative;
+    border-radius: 34px;
+    background-color: #ccd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .toggle::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.3s;
+  }
+
+  .toggle.on {
+    background-color: #66bb6a;
+  }
+
+  .toggle.on::before {
+    transform: translateX(26px);
+  }
+
+  #place{
+    width: 100px;
+    height: 100px;
+    background-color: #66bb6a;
+    margin-top: 30px;
+  }

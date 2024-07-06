@@ -8,12 +8,91 @@
   </head>
   <body>
     <h1>JavaSctipt Events</h1>
-    <button onclick="displayDate()">Click Me</button>
-    <p id="demo">Time will show here</p>
+    <!-- <form id="myForm">
+        <label for="name">Name : </label>
+        <input type="text" name="" id="" placeholder="Enter Your Name">
+        <br> <br>
+        <button type="submit">Click Me</button>
+    </form> -->
+    <!-- <button id="bttn">Click Me</button> -->
+    <!-- <p id="demo"></p> -->
+
+    <div class="images">
+      <ul id="list">
+        <li>
+            <img id="bug"
+            src="https://images.pexels.com/photos/14803628/pexels-photo-14803628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+            />
+        </li>
+        <li>
+            <img id="fox"
+            src="https://images.pexels.com/photos/26472012/pexels-photo-26472012/free-photo-of-fox-cub.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+            />
+        </li>
+        <li>
+            <img id="horse"
+            src="https://images.pexels.com/photos/297201/pexels-photo-297201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+            />
+        </li>
+        <li id="baal">Baal</li>
+        <p id="demo">Mouse NOt Hovered</p>
+      </ul>
+      <ul>
+        <h2>Google</h2>
+        <li id="google">
+          <a href="https://www.google.co.uk/" target="_blank">Google</a>
+        </li>
+      </ul>
+    </div>
     <script>
-      function displayDate() {
-        document.getElementById("demo").innerHTML = Date();
-      }
+      //   document.getElementById("bttn").addEventListener("click", () => {
+      //     document.getElementById("demo").innerHTML = Date();
+      //   });
+      // document.getElementById('myForm').addEventListener('submit', (event) => {
+      //     event.preventDefault();
+      //     console.log(event);
+      // }, false);
+
+      //false is propogation. this is also called bubble propogation.
+      //true is also a propogation. this is called capture propogation.
+
+      // document.getElementById('list').addEventListener('click', (event) => {
+      //     console.log("list clicked")
+      // }, false)
+
+      // document.getElementById('mango').addEventListener('click', (event) => {
+      //     event.stopPropagation();
+      //     console.log("mango clicked");
+      // }, false)
+
+      // //prevent default action.
+      // document.getElementById('google').addEventListener('click', (event) => {
+      //     event.preventDefault();
+      //     console.log("google clicked!");
+      // }, false)
+    
+
+      document.getElementById('list').addEventListener('click', (event) => {
+        console.log(event.target.tagName);
+        if(event.target.tagName === 'IMG'){
+          console.log(event.target.id)
+          let removeImage = event.target.parentNode
+          removeImage.remove();
+        }
+ 
+      }, false);
+
+      document.getElementById('google').addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log("google clicked!")
+      }, false);
+
+      document.getElementById('baal').addEventListener('mouseover', (event) => {
+        document.getElementById('demo').innerHTML="Hoverd!!!"
+      }, false)
     </script>
   </body>
 </html>

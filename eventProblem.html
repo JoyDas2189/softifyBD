@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Event Problem</title>
+    <link rel="stylesheet" href="eventProblem.css">
+</head>
+<body>
+    <h1>Event Related Problem.</h1>
+    <!-- <button id="bttn">Click Me</button>
+    <div id="square">
+    </div> -->
+    <p id="demo"></p>
+
+    <!-- <form id="myForm">
+        <label for="name">Name : </label>
+        <input type="text" name="" id="name" placeholder="Enter Your Name">
+        <button id="bttn" type="submit">Submit</button>
+    </form> -->
+    
+    <div class="toggle">
+
+    </div>
+    
+    <div id="place">
+
+    </div>
+
+    <button id="myButton">Click Me</button>
+    
+    <script>
+        // document.getElementById('bttn').addEventListener('click', () => {
+        //     document.getElementById('demo').innerHTML = "Button Clicked";
+        // });
+
+        // let hoverAble = document.getElementById('square');
+        // hoverAble.addEventListener('mouseover', () => {
+        //     hoverAble.style.backgroundColor = "red";
+        // })
+        // hoverAble.addEventListener('mouseleave', () => {
+        //     hoverAble.style.backgroundColor = "blue";
+        // })
+
+        // let sampleForm = document.getElementById('myForm');
+        // let name = document.getElementById('name');
+
+        // sampleForm.addEventListener('submit', () => {
+        //     if(name.trim() === "") {
+        //         document.getElementById('demo').innerHTML= "Name is requierd";
+        //     }
+        // })
+
+        let toggle = document.querySelector('.toggle');
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('on');
+        })
+
+
+        let clickFounder = document.getElementById('place');
+        clickFounder.addEventListener('dblclick', () => {
+            document.getElementById('demo').innerHTML = "Double Click Work!"
+        })
+
+        let keyCounter = document.getElementById('myButton');
+
+        keyCounter.addEventListener('keyup', () => {
+            document.getElementById('demo').innerHTML = "key pressed!";
+        })
+    </script>
+    <p id="demo"></p>
+</body>
+</html>
