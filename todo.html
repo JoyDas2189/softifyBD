@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #heading {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        #newTask {
+            height: 25px;
+            width: 200px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        #addBttn {
+            height: 30px;
+            width: 70px;
+            background-color: navy;
+            border: 1px solid gray;
+            border-radius: 5px;
+            color: white;
+        }
+
+        button {
+            height: 30px;
+            color: white;
+            margin-left: 30px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 5px;
+        }
+        span {
+            width: 50px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="todo">
+        <h1 id="heading">To-Do List</h1>
+        <input type="text" id="newTask" placeholder="Add a task">
+        <button id="addBttn" onclick="addTask()">ADD</button>
+        <ul id="tasks"></ul>
+    </div>
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById('newTask');
+            let details = taskInput.value;
+
+            let taskList = document.getElementById('tasks');
+            let newItem = document.createElement('li');
+
+            let task = document.createElement('span');
+            task.innerText = details;
+
+            let deleteBttn = document.createElement('button');
+            deleteBttn.innerText = 'Delete Task';
+            deleteBttn.style.backgroundColor = 'red';
+            deleteBttn.onclick = function () {
+                taskList.removeChild(newItem);
+            };
+
+            
+            let updateBttn = document.createElement('button');
+            updateBttn.innerText = 'Edit Task';
+            updateBttn.style.backgroundColor = 'orange'
+            updateBttn.onclick = function () {
+                let newDetails = prompt("Edit the task:", task.innerText);
+                if (newDetails !== null) {
+                    task.innerText = newDetails;
+                }
+            };
+
+
+            let completeBttn = document.createElement('button');
+            completeBttn.innerText = 'Complete';
+            completeBttn.style.backgroundColor = 'green';
+            completeBttn.onclick = function () {
+                task.style.opacity = '40%';
+            };
+
+            newItem.appendChild(task);
+            newItem.appendChild(deleteBttn);
+            newItem.appendChild(updateBttn);
+            newItem.appendChild(completeBttn);
+            taskList.appendChild(newItem);
+
+            taskInput.value = '';
+        }
+    </script>
+</body>
+
+
+</html>

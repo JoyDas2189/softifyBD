@@ -17,7 +17,7 @@
     <!-- <button id="bttn">Click Me</button> -->
     <!-- <p id="demo"></p> -->
 
-    <div class="images">
+    <!-- <div class="images">
       <ul id="list">
         <li>
             <img id="bug"
@@ -46,7 +46,10 @@
           <a href="https://www.google.co.uk/" target="_blank">Google</a>
         </li>
       </ul>
-    </div>
+    </div> -->
+    <label for="name ">name : </label>
+    <input type="text" name="" id="name" placeholder="enter name">
+    <p id="demo"></p>
     <script>
       //   document.getElementById("bttn").addEventListener("click", () => {
       //     document.getElementById("demo").innerHTML = Date();
@@ -75,24 +78,35 @@
       // }, false)
     
 
-      document.getElementById('list').addEventListener('click', (event) => {
-        console.log(event.target.tagName);
-        if(event.target.tagName === 'IMG'){
-          console.log(event.target.id)
-          let removeImage = event.target.parentNode
-          removeImage.remove();
-        }
+      // document.getElementById('list').addEventListener('click', (event) => {
+      //   console.log(event.target.tagName);
+      //   if(event.target.tagName === 'IMG'){
+      //     console.log(event.target.id)
+      //     let removeImage = event.target.parentNode
+      //     removeImage.remove();
+      //   }
  
-      }, false);
+      // }, false);
 
-      document.getElementById('google').addEventListener('click', (event) => {
-        event.preventDefault();
-        console.log("google clicked!")
-      }, false);
+      // document.getElementById('google').addEventListener('click', (event) => {
+      //   event.preventDefault();
+      //   console.log("google clicked!")
+      // }, false);
 
-      document.getElementById('baal').addEventListener('mouseover', (event) => {
-        document.getElementById('demo').innerHTML="Hoverd!!!"
-      }, false)
+      // document.getElementById('baal').addEventListener('mouseover', (event) => {
+      //   document.getElementById('demo').innerHTML="Hoverd!!!"
+      // }, false)
+
+      window.addEventListener('load', () => {
+        alert("Page loaded!");
+      })
+      let name = document.getElementById('name');
+      let output = document.getElementById('demo');
+      name.addEventListener('change', () => {
+       output.textContent = `You entered: ${name.value}`;
+      })
+
+
     </script>
   </body>
 </html>
