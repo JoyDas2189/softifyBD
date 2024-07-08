@@ -43,6 +43,13 @@ let text = "   hello world   ";
 // console.log(text.toUpperCase());
 // console.log(text.toLowerCase());
 // console.log(text.trim());
-console.log(text.trimStart().length);
-console.log(text.trimEnd().length);
-console.log(text.padEnd(4, "0"));
+// console.log(text.trimStart().length);
+// console.log(text.trimEnd().length);
+// console.log(text.padEnd(4, "0"));
+
+// let d = new Date();
+// d.setDate(d.getDate() + 50);
+// console.log(d);
+
+let number = Math.floor(Math.random() * 100);
+console.log(number);

@@ -61,7 +61,7 @@ for (let key in person) {
 
 //Constructor
 
-
+/* 
 function Person (name, age, eye) {
     this.name = name;
     this.age = age;
@@ -72,4 +72,29 @@ let mybrother = new Person ("zoro", 50, "black");
 let myInfo = new Person ("Joy", 24, "black");
 
 console.log(mybrother.name, mybrother.age, mybrother.eye);
-console.log(myInfo.name, myInfo.age, myInfo.eye);
+console.log(myInfo.name, myInfo.age, myInfo.eye); */
+
+/* 
+function vowelsAndConsonants(s) 
+{
+    var vowels = ['a', 'e', 'i', 'o', 'u']
+    for (var i = 0; i < s.length; i++)
+        {
+            if (vowels.indexOf(s[i]) > -1)
+                {
+                    console.log(s[i]);
+                }
+        }
+    
+    for (var j = 0; j < s.length; j++)
+        {
+            if (vowels.indexOf(s[j]) < 0)
+                {
+                    console.log(s[j]);
+                }
+        }
+    
+} 
+console.log(vowelsAndConsonants())
+ */
+
