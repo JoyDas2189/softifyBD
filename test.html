@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      //         let myDate = new Date();
+      //         document.getElementById('demo').innerHTML = myDate.toLocaleDateString('default', {
+      //             year:"numeric",
+      //             month:"long",
+      //             day:"numeric",
+      //             minute:"2-digit",
+      //             hour:"2-digit",
+      //             second:"2-digit",
+      // });
+
+      //   let mesc = Date.parse("Oct 27, 1999");
+      // //   let d = new Date(mesc)
+      //   document.getElementById('demo').innerHTML = mesc;
+      /* 
+      let d = new Date();
+      let days = [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+      ];
+      document.getElementById('demo').innerHTML = days[d.getDay()]; */
+
+    //   let currentDate = new Date();
+    //   currentDate.setDate(currentDate.getDate() - 30);
+    //   document.getElementById("demo").innerHTML = currentDate.toLocaleDateString();
+
+    //   const d = new Date();
+    //   d.setDate(d.getDate() + 50);
+    //   document.getElementById("demo").innerHTML = d;
+
+    let currDate = new Date();
+    document.getElementById('demo').innerHTML = currDate.toLocaleDateString('default', {
+        month:"long",
+        year:"numeric",
+        day:"numeric"
+    });
+    </script>
+  </body>
+</html>

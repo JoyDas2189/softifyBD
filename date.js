@@ -65,13 +65,93 @@ console.log(time)
  */
 
 
-let d = new Date()
+// let d = new Date()
 // d.setFullYear(2023);
 // d.setMonth(11);
 // d.setDate(24);
 // d.setHours(2);
 // d.setMinutes(10);
 // d.setSeconds(25);
-d.getMonth(6);
 
-console.log(d);
+// console.log(d);
+// console.log(d.toString());
+// console.log(d.toDateString());
+// console.log(d.toISOString());
+// console.log(d.toJSON());
+// console.log(d.toLocaleString());
+// console.log(d.toLocaleDateString());
+
+// let myDate = new Date();
+// console.log(myDate)
+// // console.log(myDate.getMonth() + 1);
+// console.log(myDate.toLocaleDateString('default', {
+//     month: 'long',
+//     weekday: 'long',
+// }));
+
+
+// let d = new Date()
+// console.log(d.toString());
+// console.log(d.toDateString());
+// console.log(d.toUTCString());
+// console.log(d.toISOString());
+// console.log(d.toLocaleString());
+// console.log(d.toLocaleDateString());
+
+// console.log(d.toLocaleDateString('default', {
+//     month:"long",
+// }));
+
+
+//Date Format...
+
+// let mesc = Date.parse("1999-10-27T06:25:30Z");
+// let newDate = new Date(mesc)
+// console.log(newDate);
+
+
+//Get Methods
+
+/* 
+let currDate = new Date();
+console.log(currDate);
+console.log(currDate.getTime());
+console.log(currDate.getFullYear());
+console.log(currDate.getMonth() + 1);
+console.log(currDate.getDate());
+console.log(currDate.getDay());
+console.log(currDate.getHours());
+console.log(currDate.getMinutes());
+console.log(currDate.getSeconds());
+console.log(currDate.toLocaleDateString('default', {
+    year:'numeric',
+    month:'long',
+    day:'numeric',
+    weekday:'long',
+    hour:"numeric",
+    minute:"numeric",
+    second:"numeric",
+}));
+
+
+let d = new Date();
+let days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+
+
+console.log(days[d.getDay()]);
+ */
+
+// Set Method
+
+let currDate = new Date();
+
+currDate.setFullYear(1999);
+currDate.setMonth(9);
+currDate.setDate(27);
+currDate.setHours(22);
+currDate.setMinutes(45);
+currDate.setSeconds(24);
+currDate.setMilliseconds(500);
+
+// currDate.setDate(currDate.getDate() + 31);
+console.log(currDate);
