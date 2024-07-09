@@ -163,7 +163,7 @@ console.log(getSecondLargest([2,3,6,6,5]));
  */
 
 
-
+/* 
 const uniqueGenerator = (arr) => {
     let uniqueArray = [];
     let uniqueArrayIndex = 0;
@@ -196,4 +196,63 @@ const uniqueGenerator = (arr) => {
 
 let value = [2,3,6,6,5];
 console.log(uniqueGenerator(value));
- 
+  */
+/* 
+
+const stringReverse = (s) => {
+    // let splitted = s.split("").reverse().join("");
+    // return splitted;
+  
+    let reversed = "";
+    for (let i = s.length - 1; i >= 0; i--) {
+      reversed += s[i];
+    }
+    return reversed;
+  };
+  
+  console.log(stringReverse("1234"));
+   */
+
+
+//   function vowelsAndConsonants(s) {
+//     let vowels = ['a', 'e', 'i', 'o', 'u'];
+//     for(let i = 0; i < s.length; i++) {
+//         if(vowels.indexOf(s[i]) > -1) {
+//             console.log(s[i]);
+//         }
+//     }
+//     for(let j = 0; j < s.length; j++) {
+//         if(vowels.indexOf(s[j]) < 0) {
+//             console.log(s[j]);
+//         }
+//     }
+//   }
+//   vowelsAndConsonants("javascriptloops");
+
+function vowelsAndConsonants (s) {
+    let vowels = [];
+    let vowelIndex = 0;
+    let consonents = [];
+    let consonentIndex = 0;
+
+    for(let i = 0; i < s.length; i++){
+        let char = s[i];
+
+        if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+            vowels[vowelIndex] = char;
+            vowelIndex++;
+        }
+        else {
+            consonents[consonentIndex] = char;
+            consonentIndex++;
+        }
+    }
+
+    for(let i = 0; i < vowels.length; i++) {
+        console.log(vowels[i]);
+    }
+    for(let i = 0; i < consonents.length; i++) {
+        console.log(consonents[i]);
+    }
+}
+(vowelsAndConsonants("javascriptloops"))
