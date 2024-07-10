@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age and Next Birthday Calculator</title>
+</head>
+<body>
+    <h1>Age and Next Birthday Calculator</h1>
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate">
+    <button onclick="calculateAgeAndNextBirthday()">Calculate</button>
+
+    <p id="output"></p>
+
+    <script>
+        function calculateAgeAndNextBirthday() {
+            const birthdateInput = document.getElementById('birthdate').value;
+            if (!birthdateInput) {
+                document.getElementById('output').innerText = 'Please enter a valid birthdate.';
+                return;
+            }
+
+            const birthdate = new Date(birthdateInput);
+            const today = new Date();
+
+            // Calculate age
+            let age = today.getFullYear() - birthdate.getFullYear();
+            const monthDifference = today.getMonth() - birthdate.getMonth();
+            const dayDifference = today.getDate() - birthdate.getDate();
+            
+            // Adjust age if birthday hasn't occurred yet this year
+            if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+                age--;
+            }
+            // Calculate next birthday
+            let nextBirthday = new Date(today.getFullYear(), birthdate.getMonth(), birthdate.getDate());
+            if (today > nextBirthday) {
+                nextBirthday.setFullYear(today.getFullYear() + 1);
+            }
+
+            const timeUntilNextBirthday = nextBirthday - today;
+            const daysUntilNextBirthday = Math.floor(timeUntilNextBirthday / (1000 * 60 * 60 * 24));
+
+            const monthsUntilNextBirthday = Math.floor(daysUntilNextBirthday / 30); // Approximate months
+            const remainingDays = daysUntilNextBirthday % 30;
+
+            // Display results
+            document.getElementById('output').innerText = `${age} Years Old, ${monthsUntilNextBirthday} months ${remainingDays} days until next Birthday.`;
+        }
+    </script>
+</body>
+</html> -->

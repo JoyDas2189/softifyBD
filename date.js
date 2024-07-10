@@ -4,26 +4,25 @@
 // let specific = new Date('1999-10-27');
 // console.log(specific);
 // console.log(year);
-/* 
-function calculateAge(birthDateString) {
-    let birthDate = new Date(birthDateString);
-    let today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    let monthDiff = today.getMonth() - birthDate.getMonth();
-    let dayDiff = today.getDate() - birthDate.getDate();
 
-    // Adjust if the birthday has not occurred yet this year
-    // if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-    //     age--;
-    // }
+// function calculateAge(birthDateString) {
+//     let birthDate = new Date(birthDateString);
+//     let today = new Date();
+//     let age = today.getFullYear() - birthDate.getFullYear();
+//     let monthDiff = today.getMonth() - birthDate.getMonth();
+//     let dayDiff = today.getDate() - birthDate.getDate();
 
-    return age;
-}
+//     // Adjust if the birthday has not occurred yet this year
+//     // if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+//     //     age--;
+//     // }
 
-let birthDateString = '1990-07-08';
-let age = calculateAge(birthDateString);
-console.log(age);
- */
+//     return age;
+// }
+
+// let birthDateString = '1990-07-08';
+// let age = calculateAge(birthDateString);
+// console.log(age);
 /* 
 let date = new Date()
 
@@ -35,8 +34,11 @@ date.setMinutes(30);
 date.setSeconds(45);
 date.setMilliseconds(500);
 
-console.log(date); // Output: 2024-07-15T10:30:45.500Z
+console.log(date); 
  */
+
+
+// New
 
 /* 
 let current = new Date()
@@ -52,17 +54,20 @@ console.log(current)
  */
 
 
-// let days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-/* 
-let d = new Date();
-let day = d.getDay();
+//  let days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
-console.log(day);
+// let d = new Date();
+// let day = d.toLocaleString('default', {
+//     weekday:'long'
+// });
+// let prevDays = new Date();
 
-let t = new Date();
-let time = t.getHours();
-console.log(time)
- */
+// console.log(day);
+
+// let t = new Date();
+// let time = t.getHours();
+// console.log(time)
+
 
 
 // let d = new Date()
@@ -143,15 +148,15 @@ console.log(days[d.getDay()]);
 
 // Set Method
 
-let currDate = new Date();
+// let currDate = new Date();
 
-currDate.setFullYear(1999);
-currDate.setMonth(9);
-currDate.setDate(27);
-currDate.setHours(22);
-currDate.setMinutes(45);
-currDate.setSeconds(24);
-currDate.setMilliseconds(500);
+// // currDate.setFullYear(1999);
+// // currDate.setMonth(9);
+// // currDate.setDate(27);
+// currDate.setHours(12);
+// currDate.setMinutes(45);
+// currDate.setSeconds(50);
+// // currDate.setMilliseconds(500);
 
 // currDate.setDate(currDate.getDate() + 31);
-console.log(currDate);
+// console.log(currDate);
