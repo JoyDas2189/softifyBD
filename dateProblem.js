@@ -1,5 +1,4 @@
-
-// 1. 
+// 1.
 
 /* let myDate = new Date();
 
@@ -39,29 +38,52 @@ let newDate3Format = next3Date.toLocaleString('default', {
 console.log(prev2DaysFormat +" " +  prevDaysFormat +" "+ myDateFormat + " " + newDateFormat + " " + newDate2Format + " " + newDate3Format);
   */
 
-
 // 2.
 
-// function ageCalculate (birthDateInput) {
-//     let birthDate = new Date(birthDateInput);
-//     let today = new Date();
-
-//     let age = today.getFullYear() - birthDate.getFullYear();
-//     let months = today.getMonth() - birthDate.getMonth();
-//     let days = today.getDate() - birthDate.getDate()
-
-//     if(months < 0 && days < 0) {
-//         age--;
-//     }
-
-//     return age;
-// }
-// console.log(`${ageCalculate('1999-10-27')} years old.`); 
-
-
-
-// 3. 
-
+function calculateBirthday(birthdateInput) {
+    let birthDate = new Date(birthdateInput);
+    let today = new Date();
+  
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+  
+    if (months < 0 && days < 0) {
+      age--;
+    }
+    let nextBirthday = new Date(
+      today.getFullYear(),
+      birthDate.getMonth(),
+      birthDate.getDate()
+    );
+  
+    if (today > nextBirthday) {
+      nextBirthday.setFullYear(today.getFullYear() + 1);
+    }
+    let remainingTime = nextBirthday - today;
+    let remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    let remainingMonths = nextBirthday.getMonth() - today.getMonth();
+    if (remainingMonths < 0) {
+      remainingMonths += 12;
+    }
+    if (today.getDate() > birthDate.getDate()) {
+      remainingMonths--;
+    }
+  
+    return {
+      age: age,
+      remainingDays: remainingDays,
+      remainingMonths: remainingMonths,
+    };
+  }
+  
+  let birthdateInput = "1999-10-27";
+  let result = calculateBirthday(birthdateInput);
+  console.log(
+    `Age: ${result.age}, Remaining months: ${result.remainingMonths}, Remaining days: ${result.remainingDays}`
+  );
+  
+// 3.
 
 // let myDate = new Date();
 // let today = myDate.getDay();
@@ -82,8 +104,7 @@ console.log(prev2DaysFormat +" " +  prevDaysFormat +" "+ myDateFormat + " " + ne
 // console.log(firstDayFormat);
 // console.log(lastDayFormat);
 
-
-// 4. 
+// 4.
 
 /* 
 const lastElementLenght = (str) => {
@@ -101,8 +122,6 @@ const lastElementLenght = (str) => {
 console.log(lastElementLenght("Hello World"));
  */
 
-
-
 // let myDate = new Date()
 // let today = myDate.toLocaleString('default', {
 //     weekday:"long"
@@ -116,24 +135,3 @@ console.log(lastElementLenght("Hello World"));
 
 // console.log(today);
 // console.log(yesterDayFormat);
-
-
-// let days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-
-// let d = new Date();
-// let day = days[d.getDay()];
-
-
-// console.log(days);
-
-// const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-// const d = new Date();
-// let month = months[d.getMonth()];
-// console.log(month)
-
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-let myDate = new Date();
-let day = days[myDate.getDay()];
-
-console.log(day);
