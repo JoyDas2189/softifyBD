@@ -50,3 +50,11 @@ function fullnamegenerator (firstName, lastName, callback) {
 
 fullnamegenerator('Joy','Das', display); */
 
+function greet (name, callback ) {
+  console.log("Hi" + "" +name);
+  callback()
+}
+function callMe () {
+  console.log("This is callback function.");
+}
+greet('Joy', callMe);

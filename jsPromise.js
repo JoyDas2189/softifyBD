@@ -1,139 +1,111 @@
-// Without Promise. Also called as callback hell...
-/* 
-const madePayment = true;
-const marks = 70;
-const certified = true;
 
-function enroll(callback) {
-    console.log("Enrollment Process Ingoing...");
 
-    setTimeout(function(){
-        if(madePayment){
-            callback();
-        }
-        else {
-            console.log("You Have to complete your payment.")
-        }
-    }, 2000)
-}
+// Creating Promise and resolve it immidiately
 
-function progress(callback) {
-    console.log("Course Progess Going On...");
+// const promise = new Promise(function(resolve) {
+//     setTimeout(function(){
+//         resolve('resolved');
+//     },1000)
+// })
+// promise
+//     .then(function(res){
+//         console.log(res);
+//     })
 
-    setTimeout(function() {
-        if(marks >= 80) {
-            callback()
-        }
-        else {
-            console.log("Your Marks is Too Low");
-        }
-    }, 3000)
-}
 
-function certification (callback) {
-    console.log("Certification Process Ongoing....");
+// const promise = new Promise(function(resolve, reject) {
+//     setTimeout(function() {
+//         resolve('Resolved');
+//     },2000)
+// })
 
-    setTimeout(function(){
-       if(certified) {
-        console.log("Congratulation!!. Move forward to get a job");
-        callback();
-       } 
-       else{
-        console.log("You Didn't Got the Certificate.");
-       }
-    },2000)
-}
+// promise
+//     .then(function(res) {
+//         console.log(res)
+//     },function(err) {
+//         console.log(err);
+//     })
 
-function findingJob () {
-    console.log("Job Finding Process Ongoing...");
+// promise 
+//     .catch(function(err) {
+//         console.log(err)
+//     });
+// promise
+//     .finally(function() {
+//         console.log("finally");
+//     })
 
-    setTimeout(function(){
-        console.log("You Got a Job");
-    },3000)
-}
 
-enroll(function() {
-    progress(function(){
-        certification(findingJob);
-    })
-})
- */
+// function samplePromise () {
+//     const promise = new Promise(function(resolve) {
+//         setTimeout(function(){
+//             resolve("Hello World")
+//         },2000);
+//     })
+//     return promise;
+// }
+// samplePromise()
+//     .then(function(res) {
+//         console.log(res);
+//     })
 
-// with Promise..
+// function fetchDate () {
+//     const promise = new Promise(function(resolve) {
+//         setTimeout(function(){
+//             resolve({
+//                 name: "joy",
+//                 age: 24
+//             })
+//         },1000)
+//     })
+//     return promise;
+// }
 
-const madePayment = true;
-const marks = 80;
-const certified = true;
-const properInterview = true;
+// fetchDate() 
+//     .then(function(res) {
+//         console.log(res);
+//     })
 
-function enroll () {
-    console.log("Enrollment Process Ongoing...")
-    const promise = new Promise(function (resolve, reject) {
-        setTimeout(function(){
-            if(madePayment){
-                resolve();
-            }
-            else {
-                reject("You Have To Enroll For This Course.");
-            }
-        }, 3000)
-    })
-    return promise;
-}
-function progress () {
-    console.log("Progress Process Ongoing...");
+// function fetchUserAndPosts() {
+//     const promise = new Promise(function(resolve) {
+//         setTimeout(function(){
+//             const info = {
+//                 name: "Joy",
+//                 id: 1 
+//             }
+//             resolve(info)
+//         },2000)
+//     }).then(function() {
+//         return new Promise(function(resolve) {
+//             setTimeout(function(){
+//                 const post = ['post 1', 'post 2'];
+//                 resolve(post)
+//             },2000)
+//         })
+//     })
+//     return promise;
+// }
 
-    const promise = new Promise (function (resolve, reject) {
-        setTimeout(function () {
-            if(marks >= 80) {
-                resolve()
-            }
-            else {
-                reject("You Mark Is Not Satisfactory.")
-            }
-        }, 3000)
-    })
-    return promise;
-}
+// fetchUserAndPosts() 
+//     .then(function(res) {
+//         console.log(res)
+//     })
 
-function certification () {
-    console.log("Certification Process Ongoing...");
 
-    const promise = new Promise (function (resolve, reject) {
-        setTimeout(function () {
-            if(certified) {
-                resolve("Congratulations!! You Got a Job.");
-            }
-            else {
-                reject("You Haven't got The Certificate Yet.")
-            }
-        }, 3000)
-    })
-    return promise;
-}
+// function errorHandlingPromise() {
+//     const promise = new Promise(function(resolve, reject) {
+//         setTimeout(function() {
+//             reject("Something went wrong");
+//         }, 2000)
+//     })
+//     return promise;
+// }
+// errorHandlingPromise()
+//     .then(function(res) {
+//         console.log(res);
+//     })
+//     .catch(function(err){
+//         console.log(err)
+//     })
 
-function findingJob () {
-    console.log("Finding Job Process Ongoing...");
 
-    const promise = new Promise (function (resolve, reject) {
-        setTimeout(function() {
-            if(properInterview) {
-                resolve("Congrats!! You Got A Job.");
-            }else{
-                reject("Better Luck Next Time.")
-            }
-        },3000 )
-    }) 
-    return promise;
-}
-
-enroll()
-    .then(progress)
-    .then(certification)
-    .then(findingJob)
-    .then(function(value) {
-        console.log(value)
-    })
-    .catch(function(err){
-        console.log(err);
-    })
