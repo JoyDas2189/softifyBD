@@ -1,5 +1,3 @@
-
-
 // Creating Promise and resolve it immidiately
 
 // const promise = new Promise(function(resolve) {
@@ -11,7 +9,6 @@
 //     .then(function(res){
 //         console.log(res);
 //     })
-
 
 // const promise = new Promise(function(resolve, reject) {
 //     setTimeout(function() {
@@ -26,7 +23,7 @@
 //         console.log(err);
 //     })
 
-// promise 
+// promise
 //     .catch(function(err) {
 //         console.log(err)
 //     });
@@ -34,7 +31,6 @@
 //     .finally(function() {
 //         console.log("finally");
 //     })
-
 
 // function samplePromise () {
 //     const promise = new Promise(function(resolve) {
@@ -61,7 +57,7 @@
 //     return promise;
 // }
 
-// fetchDate() 
+// fetchDate()
 //     .then(function(res) {
 //         console.log(res);
 //     })
@@ -71,7 +67,7 @@
 //         setTimeout(function(){
 //             const info = {
 //                 name: "Joy",
-//                 id: 1 
+//                 id: 1
 //             }
 //             resolve(info)
 //         },2000)
@@ -86,11 +82,10 @@
 //     return promise;
 // }
 
-// fetchUserAndPosts() 
+// fetchUserAndPosts()
 //     .then(function(res) {
 //         console.log(res)
 //     })
-
 
 // function errorHandlingPromise() {
 //     const promise = new Promise(function(resolve, reject) {
@@ -107,5 +102,3 @@
 //     .catch(function(err){
 //         console.log(err)
 //     })
-
-
