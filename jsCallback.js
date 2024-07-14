@@ -24,7 +24,7 @@ myCalculator(10, 10);
 */
 
 // Using Callback function
-
+/* 
 function displayer (some) {
     document.getElementById('demo').innerHTML = some;
 }
@@ -34,4 +34,19 @@ function calculator (num1, num2, callback) {
     callback(mult);
 }
 
-calculator(10, 7, displayer);
+calculator(10, 7, displayer); */
+
+
+// diplaying First name and last name 
+/* 
+function display (display) {
+  document.getElementById('demo').innerHTML = display;
+}
+
+function fullnamegenerator (firstName, lastName, callback) {
+  let fullName = firstName +" " +lastName;
+  callback(fullName);
+}
+
+fullnamegenerator('Joy','Das', display); */
+

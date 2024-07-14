@@ -53,89 +53,152 @@
 // let day = days[currentDayIndex];
 
 // console.log(`${previousTwoDays}, ${day}, ${nextThreeDays}`)
-/* 
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let myDate = new Date();
-let current = myDate.getMonth(); // 0-based index for months
 
-let previous = [];
-let previousIndex = 0;
-let next = [];
-let nextIndex = 0;
 
-// Calculate previous two months
-for (let i = 2; i > 0; i--) {
-  let prevMonthIndex = (current - i + 12) % 12;
-  // previous.push(months[prevMonthIndex]);
-  previous = months[prevMonthIndex];
-  prevMonthIndex++;
-}
+// function calculateBirthday(day) {
+//     let birthDay = new Date(day);
+//     let today = new Date();
 
-// Calculate next three months
-for (let i = 1; i <= 3; i++) {
-  let nextMonthIndex = (current + i) % 12;
-//   next.push(months[nextMonthIndex]);
-next = months[nextMonthIndex];
-nextMonthIndex++;
-}
+//     let age = today.getFullYear() - birthDay.getFullYear();
+//     let months = today.getMonth() - birthDay.getMonth();
+//     let days = today.getDate() - birthDay.getDate();
 
-let currentMonth = months[current];
+//     // Adjust age if birthday hasn't occurred yet this year
+//     if (months < 0 || (months === 0 && days < 0)) {
+//       age--;
+//     }
 
-console.log(`${previous}, ${currentMonth}, ${next}`);
- */
+//     // Calculate next birthday
+//     let nextBirthday = new Date(today.getFullYear(), birthDay.getMonth(), birthDay.getDate());
+//     if (today > nextBirthday) {
+//       nextBirthday.setFullYear(today.getFullYear() + 1);
+//     }
 
-function calculateAgeAndNextBirthday(birthdate) {
-  let birthDate = new Date(birthdate);
-  let today = new Date();
+//     let remainingTime = nextBirthday - today;
+//     let remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
 
-  let age = today.getFullYear() - birthDate.getFullYear();
-  let months = today.getMonth() - birthDate.getMonth();
-  let days = today.getDate() - birthDate.getDate();
+//     // Calculate remaining months
+//     let remainingMonths = nextBirthday.getMonth() - today.getMonth();
 
-  if (months < 0 && days < 0) {
-    age--;
-  }
-  let nextBirthday = new Date(
-    today.getFullYear(),
-    birthDate.getMonth(),
-    birthDate.getDate()
-  );
+//     if (remainingDays > new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate()) {
+//         remainingMonths++;
+//         remainingDays -= new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+//       }
 
-  if (today > nextBirthday) {
-    nextBirthday.setFullYear(today.getFullYear() + 1);
-  }
-  let remainingTime = nextBirthday - today;
-  let remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-  let remainingMonths = nextBirthday.getMonth() - today.getMonth();
-  if (remainingMonths < 0) {
-    remainingMonths += 12;
-  }
-  if (today.getDate() > birthDate.getDate()) {
-    remainingMonths--;
-  }
+//     return {
+//       age,
+//       remainingMonths,
+//       remainingDays
+//     };
+//   }
 
-  return {
-    age: age,
-    remainingDays: remainingDays,
-    remainingMonths: remainingMonths,
-  };
-}
+//   let day = '1999-10-27';
+//   let birthDayOutput = calculateBirthday(day);
+//   console.log(`${birthDayOutput.age} years old. ${birthDayOutput.remainingMonths} months, ${birthDayOutput.remainingDays} days until next birthday.`);
 
-let birthdate = "1990-07-20";
-let result = calculateAgeAndNextBirthday(birthdate);
-console.log(
-  `Age: ${result.age}, Remaining days: ${result.remainingDays}, Remaining months: ${result.remainingMonths}`
-);
+// function calculateBirthday(day) {
+//   let birthDay = new Date(day);
+//   let today = new Date();
+
+//   let age = today.getFullYear() - birthDay.getFullYear();
+//   let months = today.getMonth() - birthDay.getMonth();
+//   let days = today.getDate() - birthDay.getDate();
+
+//   // Adjust the age if the birthday hasn't occurred yet this year
+//   if (months < 0 || (months === 0 && days < 0)) {
+//       age--;
+//   }
+
+//   let nextBirthdayYear = today.getFullYear();
+//   if (months > 0 && days > 0) {
+//       nextBirthdayYear++;
+//   }
+
+//   let nextBirthday = new Date(nextBirthdayYear, birthDay.getMonth(), birthDay.getDate());
+//   let remainingTime = nextBirthday - today;
+//   let remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+
+//   let remainingMonths = Math.floor(remainingDays / 30); 
+//   remainingDays %= 30;
+
+//   return {
+//       age,
+//       remainingMonths,
+//       remainingDays
+//   };
+// }
+
+// let day = '1999-10-27';
+// let birthDayOutput = calculateBirthday(day);
+// console.log(`${birthDayOutput.age} years old. ${birthDayOutput.remainingMonths} months, ${birthDayOutput.remainingDays} days until next birthday.`);
+
+// function calculateBirthday(day) {
+//     let birthDay = new Date(day);
+//     let today = new Date();
+
+//     let age = today.getFullYear() - birthDay.getFullYear();
+//     let months = today.getMonth() - birthDay.getMonth();
+//     let days = today.getDate() - birthDay.getDate();
+
+//     // Adjust the age if the birthday hasn't occurred yet this year
+//     if (months < 0 || (months === 0 && days < 0)) {
+//         age--;
+//     }
+
+//     let nextBirthdayYear = today.getFullYear();
+//     if (months > 0 || (months === 0 && days > 0)) {
+//         nextBirthdayYear++;
+//     }
+
+//     let nextBirthday = new Date(nextBirthdayYear, birthDay.getMonth(), birthDay.getDate());
+//     let remainingTime = nextBirthday - today;
+//     let remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+
+//     let remainingMonths = Math.floor(remainingDays / 30);  // Rough estimation of months
+//     remainingDays %= 30;
+
+//     return {
+//         age,
+//         remainingMonths,
+//         remainingDays
+//     };
+// }
+
+// let day = '1999-11-27';
+// let birthDayOutput = calculateBirthday(day);
+// console.log(`${birthDayOutput.age} years old. ${birthDayOutput.remainingMonths} months, ${birthDayOutput.remainingDays} days until next birthday.`);
+
+
+// function calculateBirthday() {
+//     let day = prompt("Enter your birthdate (YYYY-MM-DD):");
+//     if (!day) return; // Exit if no input
+
+//     let birthDay = new Date(day);
+//     let today = new Date();
+
+//     let age = today.getFullYear() - birthDay.getFullYear();
+//     let months = today.getMonth() - birthDay.getMonth();
+//     let days = today.getDate() - birthDay.getDate();
+
+//     if (months < 0 || (months === 0 && days < 0)) {
+//         age--;
+//     }
+
+//     let nextBirthdayYear = today.getFullYear();
+//     if (months > 0 || (months === 0 && days > 0)) {
+//         nextBirthdayYear++;
+//     }
+
+//     let nextBirthday = new Date(nextBirthdayYear, birthDay.getMonth(), birthDay.getDate());
+//     let remainingTime = nextBirthday - today;
+//     let remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+//     let remainingMonths = Math.floor(remainingDays / 30);
+//     remainingDays %= 30;
+
+//     if (remainingDays > new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate()) {
+//         remainingMonths++;
+//         remainingDays -= new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+//     }
+
+//     console.log(`${age} years old. ${remainingMonths} months, ${remainingDays} days until next birthday.`);
+// }
