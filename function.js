@@ -80,16 +80,37 @@
 
 // Function Clouser
 
-function temporary () {
-    let counter = 0;
+// function temporary () {
+//     let counter = 0;
 
-    return function () {
-        counter += 1;
-        return counter;
+//     return function () {
+//         counter += 1;
+//         return counter;
+//     }
+
+// }
+// const add = temporary();
+// console.log(add());
+// console.log(add());
+// console.log(add());
+
+
+// Function Bind
+
+
+const Person = {
+    firstName: "joy",
+    lastName: "das",
+    fullname: function() {
+        return `${this.firstName} ${this.lastName}`
     }
-
 }
-const add = temporary();
-console.log(add());
-console.log(add());
-console.log(add());
+
+const Member = {
+    firstName: "Akagami",
+    lastName: "Shanks"
+}
+
+let fullName = Person.fullname.bind(Member);
+
+console.log(fullName());
