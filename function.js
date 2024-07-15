@@ -98,19 +98,70 @@
 // Function Bind
 
 
-const Person = {
-    firstName: "joy",
-    lastName: "das",
-    fullname: function() {
-        return `${this.firstName} ${this.lastName}`
+// const Person = {
+//     firstName: "joy",
+//     lastName: "das",
+//     fullname: function() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+
+// const Member = {
+//     firstName: "Akagami",
+//     lastName: "Shanks"
+// }
+
+// let fullName = Person.fullname.bind(Member);
+
+// console.log(fullName());
+
+// (function myFunc() {
+//     console.log("Hello World!")
+// })()
+
+
+// const add = (function(){
+//     let counter = 0;
+//     return function() {
+//         counter += 1;
+//         return counter;
+//     }
+// })();
+
+// console.log(add());
+// console.log(add());
+// console.log(add());
+// console.log(add());
+
+
+function myFunction () {
+    let name = "Joy";
+
+    function sayMyName() {
+        console.log(name);
+    }
+    return sayMyName;
+}
+
+let myName = myFunction()
+
+myName()
+myName()
+myName()
+myName()
+
+
+function outerFunc () {
+    let counter = 0;
+
+    return function  () {
+        counter += 1;
+        return counter;
     }
 }
 
-const Member = {
-    firstName: "Akagami",
-    lastName: "Shanks"
-}
+let myCounter = outerFunc()
 
-let fullName = Person.fullname.bind(Member);
-
-console.log(fullName());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());

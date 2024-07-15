@@ -93,3 +93,73 @@ const myCar = new Car ("Ford");
 
 console.log(Car.hello())
  */
+
+
+
+class Prani {
+    constructor(name) {
+        this._name = name;
+    }
+
+    get info(){
+        return this._name
+
+    }
+    set info (newName) {
+        this._name = newName;
+    }
+}
+
+const dog = new Prani("Dog");
+
+console.log(dog._name);
+
+class Car {
+    constructor (make, model, year) {
+        this._make = make;
+        this._model = model;
+        this._year = year;
+    }
+
+    start() {
+        return `${this._make}, ${this._model}, ${this._year} has started`;
+    }
+    stop() {
+        return `${this._make}, ${this._model}, ${this._year} has stopped`;
+    }
+    get make() {
+        return this._make;
+    }
+    set make(newMake) {
+        this._make = newMake;
+    }
+    get model() {
+        return this._model;
+    }
+    set model(newModel) {
+        this._model = newModel;
+    }
+    get year() {
+        return this._year;
+    }
+    set year(newYear) {
+        this._year = newYear;
+    }
+}
+
+const car1 = new Car ("Toyota", "Supra", "1999");
+
+console.log(car1.start());
+console.log(car1.stop());
+
+car1.make = "Ford";
+console.log(car1.make);
+
+car1.model = "Mustang";
+console.log(car1.model);
+
+car1._year = "2000";
+console.log(car1._year);
+
+
+
