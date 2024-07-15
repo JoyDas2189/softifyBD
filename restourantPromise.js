@@ -1,6 +1,6 @@
 
 let isNoticed = true;
-let isLiked = true;
+let isLiked = false;
 let isOrdered = true;
 let isCooking = true;
 let isDeliverd = false;
@@ -91,22 +91,6 @@ function deliverFood() {
     })
     return promise;
 }
-
-// callWaiter(orderFood);
-// orderFood(informChef);
-// informChef(cookFood);
-// cookFood(deliverFood);
-// deliverFood();
-
-
-
-// callWaiter(function() {
-//     orderFood(function() {
-//         informChef(function() {
-//             cookFood(deliverFood) 
-//         })
-//     })
-// })
 
 
 callWaiter() 

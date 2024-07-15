@@ -48,21 +48,48 @@
 
 // console.log(myDog.speak());
 
-class Rectangle {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
+// class Rectangle {
+//     constructor(width, height) {
+//         this.width = width;
+//         this.height = height;
+//     }
+
+//     get area() {
+//         return this.width + this.height;
+//     }
+
+//     set area(value) {
+//         throw new Error('Area is a read-only property');
+//     }
+// }
+
+// const rect = new Rectangle(5, 10);
+// console.log(rect.area); 
+
+
+// Static
+
+/* 
+class MathHelper {
+    static add(a, b){
+        return a + b;
+    }
+}
+console.log(MathHelper.add(10, 5));
+ */
+
+/* 
+class Car {
+    constructor (name) {
+        this.name = name;
     }
 
-    get area() {
-        return this.width + this.height;
-    }
-
-    set area(value) {
-        throw new Error('Area is a read-only property');
+    static hello() {
+        return `Hello ${this.name}`
     }
 }
 
-const rect = new Rectangle(5, 10);
-console.log(rect.area); // Output: 15
-// rect.area = 20; // Error: Area is a read-only property
+const myCar = new Car ("Ford");
+
+console.log(Car.hello())
+ */
